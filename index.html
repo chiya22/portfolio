@@ -24,14 +24,36 @@
 
 <body>
     <header>
-
+        <nav>
+            <div class="drawer">
+                <a class="navbar_brand" href="#">
+                    <img src="img/logo.png">
+                </a>
+                <div class="navbar_toggle js-toggle">
+                    <span class="navbar_toggle_icon"></span>
+                    <span class="navbar_toggle_icon"></span>
+                    <span class="navbar_toggle_icon"></span>
+                </div>
+            </div>
+            <div class="menu">
+                <ul>
+                    <li><a href="#intro">自己紹介</a></li>
+                    <li><a href="#feature">特徴</a></li>
+                    <li><a href="#service">サービス</a></li>
+                    <li><a href="#dev">開発実績</a></li>
+                    <li><a href="#price">料金</a></li>
+                    <li><a href="#toiawase">問い合わせ</a></li>
+                </ul>
+            </div>
+        </nav>
     </header>
     <!-- header -->
 
     <section id="intro">
         <div class="section-header">
             <h2>自己紹介</h2>
-            <p>社会に出てから44歳まで下請け企業の社員として火事場プロジェクトを転戦。<br>45歳にして今後の人生を考え、「自分の時間」「家族との時間」を大切にするためには場所を選ばない働き方ができなければならないと考え、フロントエンド開発の勉強を始めました！<br>夢はフロントエンド開発で収入を得た上で、地方都市に庭付きの一軒家を購入し、庭の畑の世話をしながら家族とペットと一緒に暮らすことです。</p>
+            <p>社会に出てから44歳まで下請け企業の社員として火事場プロジェクトを転戦。<br>45歳にして今後の人生を考え、「自分の時間」「家族との時間」を大切にするためには場所を選ばない働き方ができなければならないと考え、フロントエンド開発の勉強を始めました！<br>夢はフロントエンド開発で収入を得た上で、地方都市に庭付きの一軒家を購入し、庭の畑の世話をしながら家族とペットと一緒に暮らすことです。
+            </p>
         </div>
         <!-- /.section-header -->
     </section>
@@ -75,7 +97,8 @@
         <ul>
             <li>作業内容</li>
             <li>希望金額</li>
-            <p>年齢はいっていますが、まだまだ駆け出しのエンジニアですので、すべてサービス価格で提供させていただきます！</p>
+        </ul>
+        <p>年齢はいっていますが、まだまだ駆け出しのエンジニアですので、すべてサービス価格で提供させていただきます！</p>
     </section>
     <!-- #price-->
 
@@ -86,9 +109,18 @@
     <!-- #toiawase -->
 
     <footer>
-
+        <p>&copy; 2020 10mo8</p>
     </footer>
     <!-- footer -->
+
+    <script>
+        let toggle = document.getElementsByClassName('js-toggle')[0];
+        let menu = document.getElementsByClassName('menu')[0];
+        toggle.addEventListener('click', function() {
+            this.classList.toggle('open');
+            menu.classList.toggle('open');
+        });
+    </script>
 
 </body>
 
