@@ -1,3 +1,7 @@
+body {
+  font-family: 'Noto Sans JP', sans-serif;
+}
+
 a {
   text-decoration: none;
 }
@@ -118,6 +122,90 @@ nav {
 .navbar_brand img {
   width: auto;
   height: 100%;
+}
+
+.container-header {
+  font-size: 26px;
+  padding: 20px 0;
+  text-align: center;
+}
+
+.service-container {
+  width: 95%;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.service-item {
+  width: 100%;
+}
+
+.card {
+  padding: 10px 0;
+  border: 1px solid #000;
+  margin-bottom: 20px;
+  box-shadow: 2px 2px 4px gray;
+}
+
+.card-img {
+  height: 100px;
+  width: 100px;
+  margin: 0 auto;
+}
+
+.card-title {
+  font-size: 20px;
+  letter-spacing: 0.01rem;
+  padding: 10px 0;
+}
+
+.card-text {
+  font-size: 16px;
+  letter-spacing: 0.01rem;
+  line-height: 1.5rem;
+}
+
+.work-container {
+  width: 95%;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.work-item {
+  width: 100%;
+  margin-bottom: 20px;
+  box-shadow: 2px 2px 4px gray;
+}
+
+.work-header {
+  font-size: 20px;
+  letter-spacing: 0.01rem;
+  padding: 10px 0;
+  text-align: center;
+}
+
+.work-htmls, .work-wps, .work-nocodes {
+  margin-top: 40px;
+}
+
+.work-content {
+  font-size: 16px;
+  letter-spacing: 0.01rem;
+  line-height: 1.5rem;
+}
+
+.work-item {
+  width: 100%;
+}
+
+.work-item img {
+  width: 100%;
+  height: auto;
+}
+
+.wrok-item a:hover {
+  transform: translateY(-10px);
+  box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.2);
 }
 
 footer {
