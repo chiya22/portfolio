@@ -120,10 +120,22 @@
                             <img src="/img/icon/homepage.svg">
                         </div>
                         <h3 class="card-title">NoCode</h3>
-                        <p class="card-text">ツールを使用して短時間でWebサイトを作成<br>SnowMonkeyやwebflowを使用します</p>
+                        <p class="card-text">短時間でWebサイトを作成<br>SnowMonkeyやwebflowを使用します</p>
                     </div>
                     <!-- /.card-content -->
                     <a class="small-button" href="#nocode">開発事例を見る</a>
+                </div>
+                <!-- /.service-item -->
+                <div class="service-item card">
+                    <div class="card-content">
+                        <div class="card-img">
+                            <img src="/img/icon/rpa.svg">
+                        </div>
+                        <h3 class="card-title">RPA</h3>
+                        <p class="card-text">ExcelのマクロやVBAを使用しツールを作成<br>業務効率化をサポートします！</p>
+                    </div>
+                    <!-- /.card-content -->
+                    <!-- <a class="small-button" href="#nocode">開発事例を見る</a> -->
                 </div>
                 <!-- /.service-item -->
             </div>
@@ -141,7 +153,8 @@
                     rel="noopener noreferrer">http://daily-trial.com</a>）というWeb制作学習サイトで作成したサイトなど、今まで作成したサイトを紹介します。</p>
             <div id="html" class="work-htmls">
                 <h3 class="work-header sub-header">HTML/CSS</h3>
-                <p class="normal-text">HTMLとCSSを使用して作成したサイトです。機能は少ないですが、<span class="under">デザイン性を高く</span>することができます。
+                <p class="normal-text">HTMLとCSSを使用して作成したサイトです。機能は少ないですが、<span
+                        class="font-middle under">デザイン性を高く</span>することができます。
                 </p>
 
                 <div class="work-items">
@@ -163,7 +176,8 @@
             <!-- /.work-htmls -->
             <div id="wp" class="work-wps">
                 <h3 class="work-header">WordPress</h3>
-                <p class="normal-text">WordPressでオリジナルテーマから作成したサイトです。<span class="under">ブログ機能</span>が使用できます。</p>
+                <p class="normal-text">WordPressでオリジナルテーマから作成したサイトです。<span
+                        class="font-middle under">ブログ機能</span>が使用できます。</p>
                 <div class="work-items">
                     <div class="work-item">
                         <a href="http://tomo10mo7.wp.xdomain.jp/" target="_blank" rel="noopener noreferrer">
@@ -187,7 +201,7 @@
             <div id="nocode" class="work-nocodes">
                 <h3 class="work-header">NoCode</h3>
                 <p class="work-text normal-text">WordPressの既存テーマSnowMonkeyを使用して作成したサイトです。<span
-                        class="under">2時間から3時間で作成できてしまいます。</span></p>
+                        class="font-middle under">2時間から3時間で作成できてしまいます。</span></p>
                 <div class="work-items">
                     <div class="work-item">
                         <a href="http://tomo10mo8.php.xdomain.jp/nocode01/" target="_blank" rel="noopener noreferrer">
@@ -219,7 +233,7 @@
         <div class="price-inner">
             <h2 class="container-header">料金</h2>
             <p class="normal-text">お問い合わせフォームより、お問い合わせください。<br></p>
-            <p class="normal-text"><br>年齢はいっていますが、まだまだ駆け出しのエンジニアですので、<span class="under">すべてサービス価格</span>で提供させていただきます！
+            <p class="normal-text"><br>まだまだ駆け出しのエンジニアですので、<span class="font-middle under">すべてサービス価格</span>で提供させていただきます！
             </p>
         </div>
         <!-- /.containe -->
@@ -229,19 +243,24 @@
     <section class="base-container" id="toiawase">
         <div class="toiawase-inner">
             <h2 class="container-header">お問い合わせ</h2>
-            <p class="normal-text">お気軽に何でもお問い合わせください。<br><span class="under">2日以内に</span>必ず返信いたします！</p>
-            <form>
+            <p class="normal-text">お気軽に何でもお問い合わせください。<span class="font-middle under">2日以内に</span>必ず返信いたします！</p>
+            <form name="toiawaseform"
+                action="https://docs.google.com/forms/u/3/d/e/1FAIpQLSfIUMeAbcJx4QryvKCsHM68CLT3ysunRms9OCHB_d_K_1gU_Q/formResponse"
+                method="POST" target="dummyIframe">
                 <dl class="form-items">
                     <dt class="form-label normal-text">お名前</dt>
-                    <dd class="form-input"><input type="text" name="name"></dd>
+                    <dd class="form-input"><input name="entry.1632538677" type="text" name="name"></dd>
                     <dt class="form-label normal-text">メールアドレス</dt>
-                    <dd class="form-input"><input type="email" name="email"></dd>
+                    <dd class="form-input"><input name="entry.404804711" type="email" name="email"></dd>
                     <dt class="form-labeltextarea normal-text">問い合わせ内容</dt>
-                    <dd class="form-textarea"><textarea id="contact__form-msg"></textarea></dd>
+                    <dd class="form-textarea"><textarea name="entry.1767900832" id="contact__form-msg"></textarea></dd>
                 </dl>
+                <input type="submit" value="問い合わせする">
+                <iframe name="dummyIframe" class="dummy" onload="showThxMessage()"></iframe>
             </form>
-
-
+            <div id="js-toiawaseMsg" class="toiawase-result normal-text">
+                お問い合わせありがとうございました<br>2日以内にご記入いただいたメールアドレスへ返信いたします！
+            </div>
         </div>
         <!-- /.container -->
     </section>
@@ -284,6 +303,11 @@
                 return false;
             });
         });
+        function showThxMessage() {
+            let toiawaseMsg = document.getElementById('js-toiawaseMsg');
+            document.toiawaseform.reset();
+            toiawaseMsg.style.display = 'block';
+        };
     </script>
 
 </body>

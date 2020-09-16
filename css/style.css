@@ -56,6 +56,10 @@ a {
   font-size: 26px;
 }
 
+.font-middle {
+  font-size: 22px;
+}
+
 .under {
   background: linear-gradient(transparent 70%, #ff99ab 70%);
   font-weight: bold;
@@ -331,7 +335,8 @@ nav {
 @media screen and (min-width: 768px) {
   .service-items {
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
+    flex-wrap: wrap;
   }
 }
 
@@ -344,7 +349,7 @@ nav {
   border: 1px solid rgba(0, 0, 0, 0.2);
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
   margin: 20px 0;
-  padding: 10px 0;
+  padding: 20px 10px;
 }
 
 @media screen and (min-width: 768px) {
@@ -360,7 +365,7 @@ nav {
 
 .card-img {
   height: 100px;
-  margin: 0 auto;
+  margin: 10px auto;
   position: relative;
   width: 100px;
 }
@@ -420,7 +425,7 @@ nav {
 
 .work-header {
   background: linear-gradient(transparent 50%, rgba(51, 51, 51, 0.1) 50%);
-  font-size: 20px;
+  font-size: 24px;
   font-weight: bold;
   letter-spacing: 0.01rem;
   margin: 0 auto 20px auto;
@@ -433,14 +438,24 @@ nav {
 .work-nocodes {
   margin: 40px 0;
   background-color: #fff;
-  padding: 0 10px;
+  padding: 20px 20px;
   border: 3px solid rgba(51, 51, 51, 0.1);
   border-radius: 15px;
 }
 
 .price-inner {
   margin: 0 auto;
-  max-width: 900px;
+  max-width: 600px;
+  padding: 20px 0 60px 0;
+  text-align: center;
+  width: 90%;
+}
+
+.toiawase-inner {
+  margin: 0 auto;
+  max-width: 600px;
+  padding: 20px 0 60px 0;
+  text-align: center;
 }
 
 .form-items {
@@ -490,6 +505,14 @@ nav {
   padding: 5px 5px;
   resize: none;
   width: 95%;
+}
+
+.dummy {
+  display: none;
+}
+
+.toiawase-result {
+  display: none;
 }
 
 footer {

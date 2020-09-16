@@ -1,8 +1,8 @@
-$base-bgcolor: rgb(51,51,51);
-$second-bgcolor: rgb(246,245,245);
+$base-bgcolor: rgb(51, 51, 51);
+$second-bgcolor: rgb(246, 245, 245);
 
-$base-fontcolor: rgb(51,51,51);
-$second-fontcolor: rgb(246,245,245);
+$base-fontcolor: rgb(51, 51, 51);
+$second-fontcolor: rgb(246, 245, 245);
 
 $breakpoints: (
     "sm": "screen and (min-width: 576px)",
@@ -69,6 +69,9 @@ a {
 }
 .font-big {
     font-size: 26px;
+}
+.font-middle {
+    font-size: 22px;
 }
 .under {
     background: linear-gradient(transparent 70%, #ff99ab 70%);
@@ -292,7 +295,7 @@ nav {
     padding-top: 40px;
     @include mq("md") {
         display: flex;
-        justify-content: center;;
+        justify-content: center;
     }
 }
 .item {
@@ -335,7 +338,8 @@ nav {
     margin-bottom: 40px;
     @include mq("md") {
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
+        flex-wrap: wrap;
     }
 }
 
@@ -349,7 +353,7 @@ nav {
     border: 1px solid rgba(0, 0, 0, 0.2);
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     margin: 20px 0;
-    padding: 10px 0;
+    padding: 20px 10px;
     @include mq("md") {
         display: flex;
         flex-direction: column;
@@ -361,7 +365,7 @@ nav {
 }
 .card-img {
     height: 100px;
-    margin: 0 auto;
+    margin: 10px auto;
     position: relative;
     width: 100px;
 }
@@ -412,7 +416,7 @@ nav {
 
 .work-header {
     background: linear-gradient(transparent 50%, rgba(51, 51, 51, 0.1) 50%);
-    font-size: 20px;
+    font-size: 24px;
     font-weight: bold;
     letter-spacing: 0.01rem;
     margin: 0 auto 20px auto;
@@ -424,18 +428,27 @@ nav {
 .work-nocodes {
     margin: 40px 0;
     background-color: #fff;
-    padding: 0 10px;
-    border: 3px solid rgba(51,51,51,0.1);
+    padding: 20px 20px;
+    border: 3px solid rgba(51, 51, 51, 0.1);
     border-radius: 15px;
 }
 
 // price
 .price-inner {
     margin: 0 auto;
-    max-width: 900px;
+    max-width: 600px;
+    padding: 20px 0 60px 0;
+    text-align: center;
+    width: 90%;
 }
 
 // toiawase
+.toiawase-inner {
+    margin: 0 auto;
+    max-width: 600px;
+    padding: 20px 0 60px 0;
+    text-align: center;
+}
 .form-items {
     display: flex;
     flex-wrap: wrap;
@@ -477,6 +490,12 @@ nav {
     padding: 5px 5px;
     resize: none;
     width: 95%;
+}
+.dummy {
+    display: none;
+}
+.toiawase-result {
+    display: none;
 }
 
 // footer
