@@ -14,10 +14,10 @@
     <meta property="og:description" content="10mo8のポートフォリオサイト" />
 
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/swiper.css">
     <link rel="stylesheet" href="css/style.css">
     <script src="https://kit.fontawesome.com/2ee6a8fc0c.js" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
 
     <title>10mo8</title>
 </head>
@@ -37,11 +37,18 @@
             </div>
             <div class="menu">
                 <ul>
-                    <li><a href="#intro">10mo8とは？</a></li>
-                    <li><a href="#service">サービス</a></li>
-                    <li><a href="#work">開発実績</a></li>
-                    <li><a href="#price">料金</a></li>
-                    <li><a href="#toiawase">問い合わせ</a></li>
+                    <li><a class="js-menu-link" href="#intro">10mo8とは？</a></li>
+                    <li><a class="js-menu-link" href="#service">サービス</a></li>
+                    <li><a class="js-menu-link" href="#work">開発実績</a></li>
+                    <li><a class="js-menu-link" href="#price">料金</a></li>
+                    <li><a class="js-menu-link" href="#toiawase">問い合わせ</a></li>
+                    <li>
+                        <div class="twitter">
+                            <a href="https://twitter.com/10mo8since2020" target="_blank" rel="noopener noreferrer">
+                                <img src="/img/icon/twitter.png">
+                            </a>
+                        </div>
+                    </li>
                 </ul>
             </div>
         </nav>
@@ -56,7 +63,9 @@
             <h2 class="container-header">10mo8とは？</h2>
             <div class="prof-area">
                 <div class="prof-img">
-                    <img src="/img/prof.png">
+                    <a href="https://twitter.com/10mo8since2020" target="_blank" rel="noopener noreferrer">
+                        <img src="/img/prof.png">
+                    </a>
                 </div>
                 <p class="prof-text normal-text">社会に出てから44歳まで下請けSI企業の社員として火事場プロジェクトを転戦。<br><br>
                     45歳にして今後の人生を考え、<span class="under">「家族との時間」</span>を大切にするために、フロントエンド開発の勉強を始めました！<br><br>
@@ -64,20 +73,23 @@
                 </p>
             </div>
             <!-- /.prof-area -->
-            <div class="feature-items">
+            <div class="feature-items wow fadeIn">
                 <div class="item">
                     <h3 class="item-header"><span class="font-big">小</span>さな仕事でも</h3>
                     <p class="item-text">大きな仕事はもちろんのこと、<br>
                         HTMLやCSSの修正など<span class="under">小さな仕事でも</span>引き受けます！</p>
+                    <p class="item-example">例えば、、、HTMLの文言修正個所が多くて困っているなどにも対応します</p>
                 </div>
                 <div class="item">
                     <h3 class="item-header"><span class="font-big">新</span>しい技術でも</h3>
                     <p class="item-text">新しい技術についても日々情報収集し、勉強しています！<br>今日<span class="under">知らない技術でも</span>喰らいつきます！</p>
+                    <p class="item-example">例えば、、、NoCodeツールを使用してECサイトを作成したいなどにも対応します</p>
                 </div>
                 <div class="item">
                     <h3 class="item-header"><span class="font-big">お</span>金がなくても</h3>
                     <p class="item-text">今はお金儲けを考える時期ではないことはわかっています！<br>値段はかなり<span
                             class="under">サービス</span>します！もちろん品質はそのままで！</p>
+                    <p class="item-example">例えば、、、初期費用は0円で、月々のサポート料3,000円などでも対応します！</p>
                 </div>
             </div>
             <!-- /.feature-items -->
@@ -86,7 +98,7 @@
     <!-- #intro -->
 
     <section class="wide-container other-bgcolor" id="service">
-        <div class="service-inner">
+        <div class="service-inner wow fadeIn">
             <h2 class="container-header">提供サービス</h2>
             <p class="normal-text">現時点ではWeb制作のサービスの提供となりますが、今後はバックグランドのサービスも提供していきます！</p>
             <div class="service-items">
@@ -138,6 +150,18 @@
                     <!-- <a class="small-button" href="#nocode">開発事例を見る</a> -->
                 </div>
                 <!-- /.service-item -->
+                <div class="service-item card">
+                    <div class="card-content">
+                        <div class="card-img">
+                            <img src="/img/icon/js.svg">
+                        </div>
+                        <h3 class="card-title">JavaScript</h3>
+                        <p class="card-text">JavaScriptでWebページに動きをつけます！<br>jQueryも対応できます！</p>
+                    </div>
+                    <!-- /.card-content -->
+                    <!-- <a class="small-button" href="#nocode">開発事例を見る</a> -->
+                </div>
+                <!-- /.service-item -->
             </div>
             <!-- /.service-items -->
             <a class="base-button" href="#toiawase">問い合わせする</a>
@@ -151,10 +175,10 @@
             <h2 class="container-header">開発実績</h2>
             <p class="normal-text">デイトラ（<a class="link-active" href="http://daily-trial.com" target="_blank"
                     rel="noopener noreferrer">http://daily-trial.com</a>）というWeb制作学習サイトで作成したサイトなど、今まで作成したサイトを紹介します。</p>
-            <div id="html" class="work-htmls">
+            <div id="html" class="work-htmls wow fadeIn">
                 <h3 class="work-header sub-header">HTML/CSS</h3>
-                <p class="normal-text">HTMLとCSSを使用して作成したサイトです。機能は少ないですが、<span
-                        class="font-middle under">デザイン性を高く</span>することができます。
+                <p class="normal-text">HTMLとCSSを使用して作成したサイトです。機能は少ないですが、<br class="sp-display"><span
+                        class="font-middle under">デザイン性を高く</span>できます。
                 </p>
 
                 <div class="work-items">
@@ -174,9 +198,9 @@
                 <!-- /.work-items -->
             </div>
             <!-- /.work-htmls -->
-            <div id="wp" class="work-wps">
+            <div id="wp" class="work-wps wow fadeIn">
                 <h3 class="work-header">WordPress</h3>
-                <p class="normal-text">WordPressでオリジナルテーマから作成したサイトです。<span
+                <p class="normal-text">WordPressでオリジナルテーマから作成したサイトです。<br class="sp-display"><span
                         class="font-middle under">ブログ機能</span>が使用できます。</p>
                 <div class="work-items">
                     <div class="work-item">
@@ -198,9 +222,9 @@
                 <!-- /.work-items -->
             </div>
             <!-- /.work-wps -->
-            <div id="nocode" class="work-nocodes">
+            <div id="nocode" class="work-nocodes wow fadeIn">
                 <h3 class="work-header">NoCode</h3>
-                <p class="work-text normal-text">WordPressの既存テーマSnowMonkeyを使用して作成したサイトです。<span
+                <p class="work-text normal-text">WordPressの既存テーマSnowMonkeyを使用して作成したサイトです。<br><span
                         class="font-middle under">2時間から3時間で作成できてしまいます。</span></p>
                 <div class="work-items">
                     <div class="work-item">
@@ -230,36 +254,46 @@
     <!-- #work -->
 
     <section class="wide-container other-bgcolor" id="price">
-        <div class="price-inner">
+        <div class="price-inner wow fadeIn">
             <h2 class="container-header">料金</h2>
-            <p class="normal-text">お問い合わせフォームより、お問い合わせください。<br></p>
-            <p class="normal-text"><br>まだまだ駆け出しのエンジニアですので、<span class="font-middle under">すべてサービス価格</span>で提供させていただきます！
-            </p>
+            <div class="price-text">
+                <p class="normal-text">お問い合わせフォームより、お問い合わせください。<br></p>
+                <p class="normal-text"><br>まだまだ駆け出しのエンジニアですので、<br class="sp-display"><span
+                        class="font-middle under">サービス価格</span>で提供させていただきます！
+                </p>
+            </div>
+            <a class="base-button" href="#toiawase">問い合わせする</a>
         </div>
-        <!-- /.containe -->
     </section>
     <!-- #price-->
 
     <section class="base-container" id="toiawase">
-        <div class="toiawase-inner">
+        <div class="toiawase-inner wow fadeIn">
             <h2 class="container-header">お問い合わせ</h2>
-            <p class="normal-text">お気軽に何でもお問い合わせください。<span class="font-middle under">2日以内に</span>必ず返信いたします！</p>
-            <form name="toiawaseform"
-                action="https://docs.google.com/forms/u/3/d/e/1FAIpQLSfIUMeAbcJx4QryvKCsHM68CLT3ysunRms9OCHB_d_K_1gU_Q/formResponse"
-                method="POST" target="dummyIframe">
-                <dl class="form-items">
-                    <dt class="form-label normal-text">お名前</dt>
-                    <dd class="form-input"><input name="entry.1632538677" type="text" name="name"></dd>
-                    <dt class="form-label normal-text">メールアドレス</dt>
-                    <dd class="form-input"><input name="entry.404804711" type="email" name="email"></dd>
-                    <dt class="form-labeltextarea normal-text">問い合わせ内容</dt>
-                    <dd class="form-textarea"><textarea name="entry.1767900832" id="contact__form-msg"></textarea></dd>
-                </dl>
-                <input type="submit" value="問い合わせする">
-                <iframe name="dummyIframe" class="dummy" onload="showThxMessage()"></iframe>
-            </form>
+            <div id="js-toiawaseContent" class="toiawase-content">
+                <p class="normal-text">お気軽に何でもお問い合わせください。<br class="sp-display"><span
+                        class="font-middle under">2日以内に</span>必ず返信いたします！</p>
+                <form name="toiawaseform" id="js-toiawaseform"
+                    action="https://docs.google.com/forms/u/3/d/e/1FAIpQLSfIUMeAbcJx4QryvKCsHM68CLT3ysunRms9OCHB_d_K_1gU_Q/formResponse"
+                    method="POST" target="dummyIframe">
+                    <dl class="form-items">
+                        <dt class="form-label normal-text">お名前</dt>
+                        <dd class="form-input"><input id="js-name" name="entry.1632538677" type="text"></dd>
+                        <dt class="form-label normal-text">メールアドレス</dt>
+                        <dd class="form-input"><input id="js-email" name="entry.404804711" type="email"></dd>
+                        <dt class="form-labeltextarea normal-text">問い合わせ内容</dt>
+                        <dd class="form-textarea"><textarea id="js-toiawase" name="entry.1767900832"
+                                id="contact__form-msg"></textarea></dd>
+                    </dl>
+                    <input class="form-send" id="js-form-send" type="button" value="送信">
+                    <iframe name="dummyIframe" class="dummy" onload="showMessage()"></iframe>
+                </form>
+            </div>
             <div id="js-toiawaseMsg" class="toiawase-result normal-text">
                 お問い合わせありがとうございました<br>2日以内にご記入いただいたメールアドレスへ返信いたします！
+            </div>
+            <div id="js-toiawaseAlert" class="toiawase-alert normal-text">
+                すべての項目の入力をお願いします。
             </div>
         </div>
         <!-- /.container -->
@@ -272,14 +306,28 @@
     <!-- footer -->
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src='https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js'></script>
+    <script>
+        new WOW().init();
+    </script>
     <script>
 
         let toggle = document.getElementsByClassName('js-toggle')[0];
         let menu = document.getElementsByClassName('menu')[0];
+        // ハンバーガーメニューをクリックしたらメニューの表示／非表示を切り替える
         toggle.addEventListener('click', function () {
             this.classList.toggle('open');
             menu.classList.toggle('open');
         });
+        // メニューリンクをクリックしたら元に戻す
+        let linklist = document.getElementsByClassName('js-menu-link');
+        for (let i = 0; i < linklist.length; i++) {
+            linklist[i].addEventListener('click', function () {
+                toggle.classList.toggle('open');
+                menu.classList.toggle('open');
+            });
+        }
+        // TOPへ戻るボタン
         $(window).on('scroll', function () {
             if ($(this).scrollTop() > 50) {
                 $('.to-top').show();
@@ -293,6 +341,7 @@
             }, 'slow');
             return false;
         });
+        // リンクのぬるっとスクロール
         $(function () {
             $('a[href^=#]').click(function () {
                 var speed = 500;
@@ -303,11 +352,35 @@
                 return false;
             });
         });
-        function showThxMessage() {
-            let toiawaseMsg = document.getElementById('js-toiawaseMsg');
-            document.toiawaseform.reset();
-            toiawaseMsg.style.display = 'block';
+        // 問い合わせフォーム送信時のメッセージ表示
+        function showMessage() {
+            let name = document.getElementById('js-name');
+            let email = document.getElementById('js-email');
+            let toiawase = document.getElementById('js-toiawase');
+            if ((name.value !== '') && (email.value !== '') && (toiawase.value !== '')) {
+                let toiawaseContent = document.getElementById('js-toiawaseContent');
+                let toiawaseMsg = document.getElementById('js-toiawaseMsg');
+                let toiawaseAlert = document.getElementById('js-toiawaseAlert');
+                document.toiawaseform.reset();
+                toiawaseMsg.style.display = 'block';
+                toiawaseContent.style.display = 'none';
+                toiawaseAlert.style.display = 'none';
+            }
         };
+        // 問い合わせフォーム送信時の必須エラーチェック
+        let sendbutton = document.getElementById('js-form-send');
+        sendbutton.addEventListener('click', () => {
+            let name = document.getElementById('js-name');
+            let email = document.getElementById('js-email');
+            let toiawase = document.getElementById('js-toiawase');
+            if ((name.value !== '') && (email.value !== '') && (toiawase.value !== '')) {
+                document.toiawaseform.submit();
+            } else {
+                let toiawaseAlert = document.getElementById('js-toiawaseAlert');
+                toiawaseAlert.style.display = 'block';
+            }
+
+        });
     </script>
 
 </body>

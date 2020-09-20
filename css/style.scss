@@ -1,6 +1,5 @@
 $base-bgcolor: rgb(51, 51, 51);
 $second-bgcolor: rgb(246, 245, 245);
-
 $base-fontcolor: rgb(51, 51, 51);
 $second-fontcolor: rgb(246, 245, 245);
 
@@ -37,15 +36,14 @@ a {
 // common
 .base-container {
     margin: 0 auto;
+    max-width: 900px;
     text-align: center;
     width: 90%;
-    max-width: 900px;
 }
 .wide-container {
     margin: 0 auto;
     text-align: center;
     width: 100%;
-    // background-color: rgba(51, 51, 51, 0.2);
 }
 .container-header {
     border-bottom: 10px solid rgba(51, 51, 51, 0.8);
@@ -56,7 +54,6 @@ a {
     padding: 10px 0;
     text-align: center;
     width: 200px;
-    // display: inline-block;
 }
 .other-bgcolor {
     background-color: rgba(51, 51, 51, 0.2);
@@ -87,8 +84,8 @@ a {
     color: $second-fontcolor;
     display: inline-block;
     margin: 10px 0;
-    padding: 20px 0;
     max-width: 400px;
+    padding: 20px 0;
     width: 100%;
 }
 .base-button:hover {
@@ -103,37 +100,47 @@ a {
     margin: 10px 0;
     padding: 10px 30px;
     @include mq("md") {
-        width: 180px;
         margin: 20px auto 10px auto;
+        width: 180px;
     }
 }
 .small-button:hover {
     opacity: 0.3;
 }
+.sp-display {
+    @include mq("md") {
+        display: none;
+    }
+}
 
 // goto Top
 // to-Top
 .to-top {
-    position: fixed;
     bottom: 55px;
+    display: none;
+    position: fixed;
     right: 10px;
     z-index: 99;
-    display: none;
 }
 .to-top img {
-    width: 50px;
-    height: auto;
     display: block;
+    height: auto;
     opacity: 0.6;
+    width: 50px;
 }
 .to-top img:hover {
     opacity: 1;
 }
 
 // header
-nav {
+header {
     background: $base-bgcolor;
     height: 100px;
+    width: 100%;
+}
+nav {
+    margin:0 auto;
+    max-width: 900px;
     position: relative;
     width: 100%;
 }
@@ -215,16 +222,26 @@ nav {
 }
 
 .menu ul li {
-    border-bottom: 1px solid #ccc;
+    border-bottom: 1px solid $second-fontcolor;
     padding: 2em;
     a {
-        color: #fff;
+        color: $second-fontcolor;
     }
+}
+.twitter {
+    display: inline-block;
+    width: 50px;
+    height: 50px;
+    border:rgb(51,51,51);
+}
+.twitter img{
+ width: 100%;
+ height: auto;
 }
 // header > menu open用
 // 隠れているメニューを表示させる
 .menu.open {
-    background-color: #333;
+    background-color:$base-bgcolor;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     transform: translateX(0);
@@ -299,7 +316,7 @@ nav {
     }
 }
 .item {
-    background-color: #fff;
+    background-color: $second-bgcolor;
     border: 5px solid rgba(0, 0, 0, 0.1);
     border-radius: 15px;
     margin-bottom: 40px;
@@ -323,6 +340,13 @@ nav {
     letter-spacing: 0.01rem;
     line-height: 1.5rem;
     text-align: left;
+}
+.item-example {
+    font-size: 14px;
+    letter-spacing: 0.01rem;
+    line-height: 1.5rem;
+    text-align: left;
+    margin-top: 40px;
 }
 
 // service
@@ -349,7 +373,7 @@ nav {
 
 // card
 .card {
-    background-color: #fff;
+    background-color: $second-fontcolor;
     border: 1px solid rgba(0, 0, 0, 0.2);
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
     margin: 20px 0;
@@ -404,10 +428,14 @@ nav {
     margin: 40px 0;
     position: relative;
     width: 100%;
+    transition: all 0.3s linear 0s;
     @include mq("md") {
         margin: 40px 10px;
         width: calc((100% / 3) - 20px);
     }
+}
+.work-item:hover {
+    transform: translateY(-10px);
 }
 .work-img {
     height: auto;
@@ -441,11 +469,15 @@ nav {
     text-align: center;
     width: 90%;
 }
+.price-text {
+    margin-bottom: 40px;
+}
 
 // toiawase
 .toiawase-inner {
     margin: 0 auto;
     max-width: 600px;
+    width: 100%;
     padding: 20px 0 60px 0;
     text-align: center;
 }
@@ -491,11 +523,29 @@ nav {
     resize: none;
     width: 95%;
 }
+.form-send {
+    background-color: rgba(51, 51, 51, 0.6);
+    font-size: 16px;
+    width: 200px;
+    border: 0px;
+    border-radius: 30px;
+    color: $second-fontcolor;
+    display: inline-block;
+    margin: 10px 0;
+    padding: 20px 0;
+}
+.form-send:hover {
+    opacity: 0.3;
+}
 .dummy {
     display: none;
 }
-.toiawase-result {
+.toiawase-result, .toiawase-alert {
     display: none;
+    background-color: #ff99ab;
+    border-radius: 20px;
+    padding: 20px 10px;
+    margin: 20px auto;
 }
 
 // footer
