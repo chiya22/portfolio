@@ -4,556 +4,540 @@ $base-fontcolor: rgb(51, 51, 51);
 $second-fontcolor: rgb(246, 245, 245);
 
 $breakpoints: (
-    "sm": "screen and (min-width: 576px)",
-    "md": "screen and (min-width: 768px)",
-    "lg": "screen and (min-width: 992px)",
-    "xl": "screen and (min-width: 1200px)",
+  "sm": "screen and (min-width: 576px)",
+  "md": "screen and (min-width: 768px)",
+  "lg": "screen and (min-width: 992px)",
+  "xl": "screen and (min-width: 1200px)",
 ) !default;
 
 @mixin mq($breakpoint: md) {
-    @media #{map-get($breakpoints, $breakpoint)} {
-        @content;
-    }
+  @media #{map-get($breakpoints, $breakpoint)} {
+    @content;
+  }
 }
 
+nav {
+  z-index: 2;
+}
+section {
+  z-index: 1;
+}
 // common
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
-body {
-    background-color: $second-bgcolor;
-    color: #333;
-    font-family: "Noto Sans JP", sans-serif;
+*,
+::before,
+::after {
+  box-sizing: inherit;
 }
-input,
-textarea {
-    font-family: "Noto Sans JP", sans-serif;
+*,
+::before,
+::after {
+  margin: 0;
 }
 a {
-    text-decoration: none;
+  color: inherit;
+  text-decoration: none;
 }
 
-// common
-.base-container {
-    margin: 0 auto;
-    max-width: 900px;
-    text-align: center;
-    width: 90%;
+body {
+  background-color: $second-bgcolor;
+  color: #333;
+  font-family: "Noto Sans JP", sans-serif;
+  overflow: scroll;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
-.wide-container {
-    margin: 0 auto;
-    text-align: center;
-    width: 100%;
+body::-webkit-scrollbar {
+  display: none;
 }
-.container-header {
-    border-bottom: 10px solid rgba(51, 51, 51, 0.8);
-    border-top: 10px solid rgba(51, 51, 51, 0.8);
-    font-size: 26px;
-    font-weight: bold;
-    margin: 40px auto 40px auto;
-    padding: 10px 0;
-    text-align: center;
-    width: 200px;
+
+input,
+textarea {
+  font-family: "Noto Sans JP", sans-serif;
 }
-.other-bgcolor {
-    background-color: rgba(51, 51, 51, 0.2);
-}
+
+// 共通
 .normal-text {
-    font-size: 16px;
-    letter-spacing: 0.01rem;
-    line-height: 1.5rem;
-    text-align: left;
+  font-size: 16px;
+  letter-spacing: 0.01rem;
+  line-height: 1.5rem;
+}
+.small-text {
+  font-size: 14px;
+  letter-spacing: 0.01rem;
+  line-height: 1.5rem;
 }
 .font-big {
-    font-size: 26px;
+  font-size: 32px;
 }
 .font-middle {
-    font-size: 22px;
+  font-size: 22px;
+}
+.font-small {
+  font-size: 14px;
 }
 .under {
-    background: linear-gradient(transparent 70%, #ff99ab 70%);
-    font-weight: bold;
-}
-.link-active {
-    color: $base-fontcolor;
-    text-decoration: underline;
-}
-.base-button {
-    background-color: rgba(51, 51, 51, 0.6);
-    border-radius: 30px;
-    color: $second-fontcolor;
-    display: inline-block;
-    margin: 10px 0;
-    max-width: 400px;
-    padding: 20px 0;
-    width: 100%;
-}
-.base-button:hover {
-    opacity: 0.3;
-}
-.small-button {
-    background-color: rgba(51, 51, 51, 0.6);
-    border-radius: 30px;
-    color: $second-fontcolor;
-    display: inline-block;
-    font-size: 14px;
-    margin: 10px 0;
-    padding: 10px 30px;
-    @include mq("md") {
-        margin: 20px auto 10px auto;
-        width: 180px;
-    }
-}
-.small-button:hover {
-    opacity: 0.3;
+  background: linear-gradient(transparent 70%, #ff99ab 70%);
+  font-weight: bold;
 }
 .sp-display {
-    @include mq("md") {
-        display: none;
-    }
-}
-
-// goto Top
-// to-Top
-.to-top {
-    bottom: 55px;
+  display: block;
+  @include mq("md") {
     display: none;
-    position: fixed;
-    right: 10px;
-    z-index: 99;
+  }
 }
-.to-top img {
+.sp-undisplay {
+  display: none;
+  @include mq("md") {
     display: block;
-    height: auto;
-    opacity: 0.6;
-    width: 50px;
-}
-.to-top img:hover {
-    opacity: 1;
+  }
 }
 
+// ヘッダー
 // header
 header {
-    background: $base-bgcolor;
-    height: 100px;
-    width: 100%;
+  background: $base-bgcolor;
+  height: 100px;
+  width: 100%;
 }
 nav {
-    margin:0 auto;
-    max-width: 900px;
-    position: relative;
-    width: 100%;
+  margin: 0 auto;
+  position: relative;
+  width: 100%;
+  height: 100px;
+  position: fixed;
 }
 
 .navbar_brand {
-    display: inline-block;
-    height: 70px;
-    padding-bottom: 10px;
-    img {
-        height: 100%;
-        width: auto;
-    }
+  display: inline-block;
+  height: 70px;
+  padding-bottom: 10px;
+  img {
+    height: 100%;
+    width: auto;
+  }
 }
 
 .drawer {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
-    height: 100px;
-    justify-content: space-between;
-    padding: 0 1em;
-    position: relative;
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  height: 100px;
+  justify-content: space-between;
+  padding: 0 1em;
+  position: relative;
+  z-index: 1000;
+  background-color: #333;
 }
 
 // header > toggle
 .navbar_toggle {
-    z-index: 9999;
+  z-index: 9999;
 }
 
 .navbar_toggle_icon {
-    background: #5c6b80;
-    -webkit-transition: ease 0.5s;
-    display: block;
-    height: 2px;
-    position: relative;
-    transition: ease 0.5s;
-    width: 30px;
+  background: #5c6b80;
+  -webkit-transition: ease 0.2s;
+  display: block;
+  height: 2px;
+  position: relative;
+  transition: ease 0.2s;
+  width: 30px;
 }
 
 .navbar_toggle_icon:nth-child(1) {
-    top: 0;
+  top: 0;
 }
 
 .navbar_toggle_icon:nth-child(2) {
-    margin: 8px 0;
+  margin: 8px 0;
 }
 
 .navbar_toggle_icon:nth-child(3) {
-    top: 0;
+  top: 0;
 }
 
 // header toggle open用のクラス
 .navbar_toggle.open .navbar_toggle_icon:nth-child(1) {
-    top: 10px;
-    -webkit-transform: rotate(45deg);
-    transform: rotate(45deg);
+  top: 10px;
+  -webkit-transform: rotate(45deg);
+  transform: rotate(45deg);
 }
 
 .navbar_toggle.open .navbar_toggle_icon:nth-child(2) {
-    opacity: 0;
-    transform: translateY(-50%);
-    -webkit-transform: translateY(-50%);
+  opacity: 0;
+  transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
 }
 
 .navbar_toggle.open .navbar_toggle_icon:nth-child(3) {
-    top: -10px;
-    transform: rotate(-45deg);
-    -webkit-transform: rotate(-45deg);
+  top: -10px;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
 }
 
 // header > menu
 // 最初は-100%で隠しておく
 .menu {
-    transform: translateX(-100%);
-    -webkit-transform: translateX(-100%);
-    transition: ease 0.5s;
-    -webkit-transition: ease 0.5s;
-    z-index: 1000;
+  transform: translateX(-100%);
+  -webkit-transform: translateX(-100%);
+  transition: ease 0.3s;
+  -webkit-transition: ease 0.3s;
 }
 
 .menu ul li {
-    border-bottom: 1px solid $second-fontcolor;
-    padding: 2em;
-    a {
-        color: $second-fontcolor;
-    }
+  border-bottom: 1px solid $second-fontcolor;
+  padding: 2em;
+  a {
+    color: $second-fontcolor;
+  }
 }
 .twitter {
-    display: inline-block;
-    width: 50px;
-    height: 50px;
-    border:rgb(51,51,51);
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: rgb(51, 51, 51);
 }
-.twitter img{
- width: 100%;
- height: auto;
+.twitter img {
+  width: 100%;
+  height: auto;
 }
 // header > menu open用
 // 隠れているメニューを表示させる
 .menu.open {
-    background-color:$base-bgcolor;
-    overflow-y: auto;
-    -webkit-overflow-scrolling: touch;
-    transform: translateX(0);
-    -webkit-transform: translateX(0);
+  background-color: $base-bgcolor;
+  overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
+  transform: translateX(0);
+  -webkit-transform: translateX(0);
 }
 
 // media query
 @include mq("md") {
-    nav {
-        display: flex;
-        flex-direction: row;
-    }
+  nav {
+    display: flex;
+    flex-direction: row;
+  }
 
-    // toggle部分は表示しない
-    .navbar_toggle {
-        display: none;
-    }
+  // toggle部分は表示しない
+  .navbar_toggle {
+    display: none;
+  }
 
-    // menuは表示する
-    .menu {
-        width: 100%;
-        transform: translateX(0);
-        -webkit-transform: translateX(0);
-    }
+  // menuは表示する
+  .menu {
+    width: 100%;
+    transform: translateX(0);
+    -webkit-transform: translateX(0);
+  }
 
-    // menuのリスト部分を組みなおす
-    .menu ul {
-        align-items: center;
-        display: flex;
-        flex-wrap: wrap;
-        height: 100px;
-        justify-content: flex-end;
-    }
+  // menuのリスト部分を組みなおす
+  .menu ul {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    height: 100px;
+    justify-content: center;
+  }
 
-    .menu ul li {
-        border-bottom: none;
-        padding: 0 1em;
+  .menu ul li {
+    border-bottom: none;
+    padding: 15px;
+    display: inline-block;
+    position: relative;
+    text-decoration: none;
+        :after {
+      position: absolute;
+      content: '';
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 3px;
+      background: #fff;
+      transition: all 0.3s ease 0s;
     }
+    :hover {
+      cursor: pointer;
+    }
+    :hover::after {
+      width: 100%;
+    }
+  }
 }
 
-// intro
-.intro-inner {
-    padding: 20px 0 60px 0;
+// プロフィール
+.prof-container {
+  text-align: center;
+}
+.prof-inner {
+  max-width: 900px;
+  margin: 0 auto;
+  margin-bottom: 40px;
+}
+.prof-main {
+  margin-bottom: 40px;
+  @include mq("md") {
+    display: flex;
+    align-items: center;
+  }
 }
 .prof-img {
-    margin: 0 auto;
-    margin-bottom: 20px;
-    width: 50%;
+  margin: 0 auto;
+  width: 50%;
+  @include mq("md") {
+    width: 30%;
+  }
 }
 .prof-img img {
-    border-radius: 50%;
-    height: auto;
-    width: 100%;
+  border-radius: 50%;
+  width: 100%;
+  height: auto;
 }
-@include mq("md") {
-    .prof-area {
-        display: flex;
-    }
-    .prof-img {
-        width: 150px;
-        height: 150px;
-    }
-    .prof-text {
-        margin-left: 20px;
-    }
-}
-.feature-items {
-    padding-top: 40px;
-    @include mq("md") {
-        display: flex;
-        justify-content: center;
-    }
-}
-.item {
-    background-color: $second-bgcolor;
-    border: 5px solid rgba(0, 0, 0, 0.1);
-    border-radius: 15px;
-    margin-bottom: 40px;
-    padding: 20px;
-    position: relative;
-    @include mq("md") {
-        margin: 0 10px;
-        width: calc((100% / 3) - 20px);
-    }
-}
-.item-header {
-    content: "";
-    font-weight: bold;
-    font-size: 16px;
-    position: absolute;
-    top: -20px;
-    z-index: 9999;
-}
-.item-text {
-    font-size: 16px;
-    letter-spacing: 0.01rem;
-    line-height: 1.5rem;
+.prof-text {
+  margin: 0 auto;
+  margin-top: 20px;
+  width: 80%;
+  @include mq("md") {
+    width: 70%;
     text-align: left;
+    margin-left: 40px;
+  }
 }
-.item-example {
-    font-size: 14px;
-    letter-spacing: 0.01rem;
-    line-height: 1.5rem;
-    text-align: left;
-    margin-top: 40px;
+.prof-items {
+  @include mq("md") {
+    display: flex;
+  }
 }
-
-// service
-.service-inner {
-    margin: 0 auto;
-    max-width: 900px;
-    padding: 20px 0 60px 0;
-    text-align: center;
-    width: 90%;
+.prof-item {
+  background-color: $second-bgcolor;
+  border: 5px solid rgba(0, 0, 0, 0.1);
+  border-radius: 15px;
+  margin: 0 20px;
+  margin-bottom: 40px;
+  padding: 20px;
+  position: relative;
+  @include mq("md") {
+    margin: 0 10px;
+    width: calc((100% / 3) - 20px);
+  }
 }
-
-.service-items {
-    margin-bottom: 40px;
-    @include mq("md") {
-        display: flex;
-        justify-content: flex-start;
-        flex-wrap: wrap;
-    }
+.prof-item-header {
+  content: "";
+  font-weight: bold;
+  position: absolute;
+  top: -25px;
+  z-index: 9999;
 }
-
-.service-item {
-    width: 100%;
+.prof-item-text {
+  text-align: left;
 }
-
-// card
-.card {
-    background-color: $second-fontcolor;
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    margin: 20px 0;
-    padding: 20px 10px;
-    @include mq("md") {
-        display: flex;
-        flex-direction: column;
-        justify-content: space-between;
-        margin: 20px 10px;
-        padding: 20px;
-        width: calc((100% / 3) - 20px);
-    }
-}
-.card-img {
-    height: 100px;
-    margin: 10px auto;
-    position: relative;
-    width: 100px;
-}
-.card-title {
-    font-size: 20px;
-    font-weight: bold;
-    letter-spacing: 0.01rem;
-    padding: 10px 0;
-}
-.card-text {
-    font-size: 16px;
-    letter-spacing: 0.01rem;
-    line-height: 1.5rem;
-    @include mq("md") {
-        text-align: left;
-    }
+.prof-item-example {
+  text-align: left;
+  margin-top: 20px;
 }
 
-// work
-.work-inner {
-    margin: 0 auto;
-    max-width: 900px;
-    padding: 20px 0 60px 0;
-    text-align: center;
-    width: 90%;
+// HTML/CSS
+.html-container,
+.wp-container,
+.nocode-container,
+.toiawase-container {
+  text-align: center;
+}
+.html-inner,
+.wp-inner,
+.nocode-inner {
+  width: 90%;
+  max-width: 900px;
+  margin: 0 auto;
 }
 
-.work-items {
-    @include mq("md") {
-        display: flex;
-        justify-content: center;
-    }
+.header {
+  font-size: 40px;
+  font-weight: bold;
+  font-family: "Montserrat", sans-serif;
+  margin: 120px auto 20px auto;
+  position: relative;
 }
-.work-item {
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    margin: 40px 0;
-    position: relative;
-    width: 100%;
-    transition: all 0.3s linear 0s;
-    @include mq("md") {
-        margin: 40px 10px;
-        width: calc((100% / 3) - 20px);
-    }
-}
-.work-item:hover {
-    transform: translateY(-10px);
-}
-.work-img {
-    height: auto;
-    width: 100%;
+.header:after {
+  position: absolute;
+  content: attr(data-indexnum);
+  opacity: 0.2;
+  font-size: 150px;
+  left: calc((100% / 2) - 100px);
+  top: -100px;
 }
 
 .work-header {
-    background: linear-gradient(transparent 50%, rgba(51, 51, 51, 0.1) 50%);
-    font-size: 24px;
-    font-weight: bold;
-    letter-spacing: 0.01rem;
-    margin: 0 auto 20px auto;
-    padding: 10px 0;
-    text-align: center;
+  font-size: 30px;
+  // font-weight: bold;
+  font-family: "Yusei Magic", sans-serif;
+  margin-bottom: 20px;
 }
-.work-htmls,
-.work-wps,
-.work-nocodes {
-    margin: 40px 0;
-    background-color: #fff;
-    padding: 20px 20px;
-    border: 3px solid rgba(51, 51, 51, 0.1);
-    border-radius: 15px;
+.toiawase-header {
+  font-size: 40px;
+  // font-weight: bold;
+  font-family: "Yusei Magic", sans-serif;
+  margin-bottom: 20px;
+}
+.work-main {
+  margin-bottom: 40px;
+}
+.work-header-img {
+  height: 100px;
+  margin: 10px auto 20px auto;
+  position: relative;
+  width: 100px;
 }
 
-// price
-.price-inner {
-    margin: 0 auto;
-    max-width: 600px;
-    padding: 20px 0 60px 0;
+.work-header-text {
+  text-align: left;
+  padding: 0 20px;
+  @include mq("md") {
     text-align: center;
-    width: 90%;
+  }
 }
-.price-text {
-    margin-bottom: 40px;
+.work-items {
+  @include mq("md") {
+    display: flex;
+    justify-content: center;
+  }
+}
+.work-item {
+  width: 90%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  overflow: hidden;
+  @include mq("md") {
+    margin: 10px 10px;
+    width: calc((100% / 3) - 10px);
+  }
+}
+.work-img {
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  height: auto;
+  margin-bottom: 20px;
+}
+.work-item img {
+  transition: 1s all;
+}
+.work-item img:hover {
+  transform: scale(1.2, 1.2);
+  transition: 1s all;
+}
+
+.work-text {
+  text-align: left;
 }
 
 // toiawase
 .toiawase-inner {
-    margin: 0 auto;
-    max-width: 600px;
-    width: 100%;
-    padding: 20px 0 60px 0;
-    text-align: center;
+  margin: 0 auto;
+  max-width: 600px;
+  width: 100%;
+  padding: 20px 0 40px 0;
+  text-align: center;
+}
+.toiawase-header {
+  font-size: 40px;
+  font-weight: bold;
 }
 .form-items {
-    display: flex;
-    flex-wrap: wrap;
-    padding: 40px 0;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 40px 0;
 }
 .form-label {
-    flex: 0 0 35%;
-    height: 50px;
-    line-height: 50px;
-    padding: 5px 0;
-    text-align: right;
+  flex: 0 0 35%;
+  height: 50px;
+  line-height: 50px;
+  padding: 5px 0;
+  text-align: right;
 }
 .form-input {
-    flex: 0 0 55%;
-    height: 50px;
-    line-height: 50px;
-    padding: 5px 10px;
+  flex: 0 0 55%;
+  height: 50px;
+  line-height: 50px;
+  padding: 5px 10px;
 }
 .form-input input {
-    font-size: 16px;
-    padding: 5px 5px;
-    width: 95%;
+  font-size: 16px;
+  padding: 5px 5px;
+  width: 95%;
 }
 .form-labeltextarea {
-    flex: 0 0 35%;
-    height: 100px;
-    padding: 15px 0;
-    text-align: right;
+  flex: 0 0 35%;
+  height: 100px;
+  padding: 15px 0;
+  text-align: right;
 }
 .form-textarea {
-    flex: 0 0 55%;
-    height: 100px;
-    line-height: 50px;
-    padding: 10px 10px;
+  flex: 0 0 55%;
+  height: 100px;
+  line-height: 50px;
+  padding: 10px 10px;
 }
 .form-textarea textarea {
-    font-size: 16px;
-    height: 90px;
-    padding: 5px 5px;
-    resize: none;
-    width: 95%;
+  font-size: 16px;
+  height: 90px;
+  padding: 5px 5px;
+  resize: none;
+  width: 95%;
 }
 .form-send {
-    background-color: rgba(51, 51, 51, 0.6);
-    font-size: 16px;
-    width: 200px;
-    border: 0px;
-    border-radius: 30px;
-    color: $second-fontcolor;
-    display: inline-block;
-    margin: 10px 0;
-    padding: 20px 0;
+  background-color: rgba(51, 51, 51, 0.6);
+  font-size: 16px;
+  width: 200px;
+  border: 0px;
+  border-radius: 30px;
+  color: $second-fontcolor;
+  display: inline-block;
+  margin: 10px 0;
+  padding: 20px 0;
 }
 .form-send:hover {
-    opacity: 0.3;
+  background-color:$second-bgcolor;
+  border: 5px solid #333;
+  color: $base-fontcolor;
+  border-radius: 45px;
+  margin: 10px 0;
+  padding: 20px 0;
+  
 }
 .dummy {
-    display: none;
+  display: none;
 }
-.toiawase-result, .toiawase-alert {
-    display: none;
-    background-color: #ff99ab;
-    border-radius: 20px;
-    padding: 20px 10px;
-    margin: 20px auto;
+.toiawase-result,
+.toiawase-alert {
+  display: none;
+  background-color: #ff99ab;
+  border-radius: 20px;
+  padding: 20px 10px;
+  margin: 20px auto;
 }
 
 // footer
 footer {
+  @include mq("md") {
+    display: block;
+    position: absolute;
+    bottom: 0;
     background-color: $base-bgcolor;
     color: $second-fontcolor;
     height: 50px;
     line-height: 50px;
     text-align: center;
     width: 100%;
+    z-index: 999;
+  }
+  display: none;
+}
+
+.swiper-wrapper {
+  flex-direction: column;
+  @include mq("md") {
+    flex-direction: row;
+  }
 }
